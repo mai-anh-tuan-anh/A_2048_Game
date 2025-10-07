@@ -2,7 +2,7 @@
 const gameBoard = document.getElementById("game-board");
 const boardSize = 4; // 4x4 grid
 let board = [];
-
+let score = 0;
 // Create the Play Again button dynamically
 const playAgainButton = document.createElement("button");
 playAgainButton.textContent = "Play Again";
@@ -58,7 +58,9 @@ function slide(row) {
   const newRow = [];
   while (filteredRow.length) {
     if (filteredRow.length > 1 && filteredRow[0] === filteredRow[1]) {
-      newRow.push(filteredRow.shift() * 2); // Merge tiles
+      const merged = filteredRow.shift() * 2;
+      newRow.push(merged);
+      score += merged;
       filteredRow.shift(); // Remove merged tile
     } else {
       newRow.push(filteredRow.shift());
@@ -119,6 +121,7 @@ function handleMove(direction) {
   if (changed) {
     spawnTile();
     drawBoard();
+    document.getElementById("score").textContent = score;
     if (checkGameOver()) {
       alert("Game Over!");
       playAgainButton.style.display = "block"; // Show Play Again button
