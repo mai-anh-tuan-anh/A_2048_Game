@@ -6,5 +6,8 @@ Combine tiles of the same number to create higher-numbered tiles until reaching 
 
 **Using Basic HTML, JS, and CSS**:
 Create a simple HTML file that includes your `script.js` and a stylesheet (e.g., `style.css`).
-Then open this HTML file in a browser to play."# A_2048_Game" 
-# A_2048_Game
+Then open this HTML file in a browser to play."# A_2048_Game"
+
+# Demo A_2048_Game
+
+![demo](image.png)
